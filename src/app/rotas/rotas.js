@@ -1,37 +1,11 @@
-const MovieDao = require('../dao/MovieDao');
-const db = require('../../config/data-base');
+const UserRoutes = require('./UserRoutes');
+const MovieRoutes = require('./MovieRoutes');
+const ApplicationRoutes = require('./ApplicationRoutes');
+
 module.exports = (app) => {
 
-    app.get('/', function(req, res){
-
-        res.send('<h1>Ola Home</h1>');
+    ApplicationRoutes(app);
+    UserRoutes(app);
+    MovieRoutes(app);
     
-    });
-    
-    
-    app.get('/api/filmes', function(req, res){
-        const movieDao = new MovieDao(db);
-        
-            movieDao.list()
-            .then(response => {
-
-                res.send(response);
-            
-
-            })
-            .catch(error => {
-                console.log(error)
-            }) 
-            
-        
-     
-            
-     
-       
-       
-    
-    
-    });
-
 }
-

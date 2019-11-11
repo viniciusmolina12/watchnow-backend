@@ -1,7 +1,10 @@
 const http = require('http');
+require('dotenv').config();
+
 const app = require('./src/config/custom-express');
 const hostName = '127.0.0.1';
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3006;
+
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
