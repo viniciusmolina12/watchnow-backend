@@ -14,7 +14,7 @@ class MovieController{
     
                 })
                 .catch(error => {
-                    console.log(error.json())
+                    console.log(error)
                 }) 
        
         }

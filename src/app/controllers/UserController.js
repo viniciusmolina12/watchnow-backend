@@ -1,5 +1,6 @@
 
 const UserDao = require('../dao/UserDao');
+const db = require('../../config/data-base');
 const { check, validationResult } = require('express-validator');
 class UserController{
 
